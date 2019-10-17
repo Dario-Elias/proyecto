@@ -2,7 +2,7 @@
     <div>
         <h2>Bienvenidos a la Administración de Tiendas</h2>
         <br>
-        <h4>Creacion de Tiendas</h4>
+        <h4>Edicion de Tiendas</h4>
     </div>
     <div>
         <label>Nombre Tienda</label>
@@ -10,7 +10,7 @@
     </div>
 <br>
     <div>
-        <button>Guardar</button>
+        <button>Actualizar</button>
         <button><a href="{{ '/tienda'}}"> Regresar</a></button>
     </div>
 </div>
