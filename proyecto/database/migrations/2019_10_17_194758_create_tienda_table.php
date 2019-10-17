@@ -14,7 +14,7 @@ class CreateTiendaTable extends Migration
     public function up()
     {
         Schema::create('tienda', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table->string('tienda',25);
             $table->timestamps();
         });
