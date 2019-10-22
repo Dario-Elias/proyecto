@@ -6,16 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
-use App\empleado;
+use App\proveedor;
 
-class EmpleadoController extends Controller
+class ProveedorController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
         public function __construct()
     {
         $this->middleware('auth');
@@ -23,7 +22,7 @@ class EmpleadoController extends Controller
 
     public function index()
     {
-        return view ("empleados.index");
+        return view ("proveedores.index");
     }
 
     /**
@@ -33,7 +32,7 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-         return view ("empleados.create");
+        return view ("proveedores.create");
     }
 
     /**
@@ -66,7 +65,7 @@ class EmpleadoController extends Controller
      */
     public function edit()
     {
-         return view ("empleados.edit");
+        return view ("proveedores.edit");
     }
 
     /**
