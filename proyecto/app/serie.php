@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class serie extends Model
 {
 
-    protected $stable='proveedor';
+    protected $stable='serie';
         protected $fillable=[
     	'id',
     	'serie'

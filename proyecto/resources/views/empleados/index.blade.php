@@ -9,5 +9,6 @@
     <div>
         <button><a href="{{ '/empleado/new' }}"> Crear</a></button>
         <button><a href="{{ '/empleado/edit' }}"> Editar</a></button>
+        <button><a href="{{ '/home' }}"> Regresar</a></button>
     </div>
 </div>

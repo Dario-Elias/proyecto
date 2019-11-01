@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\tienda;
 
 
+
 class TiendaController extends Controller
 {
     /**
@@ -24,7 +25,9 @@ class TiendaController extends Controller
 
     public function index()
     {
-        return view ("tiendas.index");
+ 
+        $tienda=tienda::all();
+        return view ("tiendas.index",compact("tienda"));
     }
 
     /**
@@ -45,7 +48,22 @@ class TiendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $tienda= new Tienda;
+        $tienda->tienda=$request->tienda;
+        $tienda->nit=$request->nit;
+        $tienda->encargado_id=$request->encargado_id;
+        $tienda->ubicacion=$request->ubicacion;
+        $tienda->capacidad=$request->capacidad;
+        $tienda->save();
+
+        return view("tiendas.index");
+
+
+
+
+
+
     }
 
     /**
@@ -56,7 +74,8 @@ class TiendaController extends Controller
      */
     public function show($id)
     {
-        //
+        $tienda=tienda::findOrFail($id);
+        return view("tiendas.show",compact("tienda"));
     }
 
     /**
@@ -65,9 +84,10 @@ class TiendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view ("tiendas.edit");
+        $tienda=tienda::findOrFail($id);
+        return view ("tiendas.edit",compact("tienda"));
     }
 
     /**
@@ -79,7 +99,9 @@ class TiendaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tienda=tienda::findOrFail($id);
+        $tienda->update($request->all());
+        return redirect("/tiendas");
     }
 
     /**
