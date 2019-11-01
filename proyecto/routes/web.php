@@ -12,6 +12,14 @@
 */
 
 Route::get('/', function () {
+    
+    $user=Auth::user();
+    if($user->esAdmin()){
+    	echo "Eres Usuario Administrador";
+    }else{
+    	echo "Eres Estudiante";
+    }
+
     return view('welcome');
 });
 
