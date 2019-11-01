@@ -11,17 +11,17 @@
      </div>
     <!-- Bootstrap Boilerplate... -->
 
-   
+    <div class="panel-body">
         <!-- Display Validation Errors -->
 
 
     
 
      <!-- New Task Form -->
-        <form action="/tienda/{{$tienda->id}}/update" method="POST" >
+        <form action="/admin/{{$tienda->id}}/update" method="POST" >
             {{ csrf_field() }}
 
-            <input type="hidden" name="_method" value="patch">
+            <input type="hidden" name="_method" value="patch"
 
 
 
@@ -67,7 +67,7 @@
 
 
         </form>
-        <form  action="/tienda/remove/{{$tienda->id}}" method="POST" >
+        <form  action="/admin/remove/{{$tienda->id}}" method="POST" >
             {{ csrf_field() }}
 
              <input type="hidden" name="_method" value="delete">
@@ -75,11 +75,11 @@
              <input type="submit" value="Eliminar Registro">
 
         </form>
-                 <a href="{{ '/tienda' }}"> Regresar</a>
+                 <a href="{{ '/admin' }}"> Regresar</a>
 
     
     </div>
-
+</div>
 
 
 @endsection 

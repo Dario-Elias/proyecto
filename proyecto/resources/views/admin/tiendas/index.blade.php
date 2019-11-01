@@ -3,7 +3,7 @@
 <div class="col-sm-offset-3 col-sm-6">
 <div class="col-sm-offset-3 col-sm-6">
     <div class="panel-title">
-        <h2>Tiendas</h2>
+        <h2>Solo Para Administradores</h2>
 
   
      </div>
@@ -16,9 +16,9 @@
             <div class="col-sm-offset-3 col-sm-6">
                 <div class="links">
                     
-                    <a href="{{ '/tienda/new' }}"> Crear</a>
+                    <a href="{{ '/admin/new' }}"> Crear</a>
                     <br>
-                    <a href="{{ '/tienda/show' }}"> Ver Listado de Tiendas</a>
+                    <a href="{{ '/admin/show' }}"> Ver Listado de Tiendas</a>
                     
 
                 </div>

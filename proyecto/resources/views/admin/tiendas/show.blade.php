@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
 <div class="col-sm-offset-3 col-sm-6">
@@ -29,8 +30,9 @@
                 </tr>
                     @foreach($tienda as $tienda)
                  <tr>
-                    <td><a href="{{route('tiendas.edit',$tienda->id)}}"> {{$tienda->id}}</a></td>
-                    <td><a href="{{route('tiendas.edit',$tienda->id)}}">  {{$tienda->tienda}}</a></td>                    
+
+                    <td><a href="{{route('admin.edit',$tienda->id)}}"> {{$tienda->id}}</a></td>
+                    <td><a href="{{route('admin.edit',$tienda->id)}}"> {{$tienda->tienda}}</a></td>                    
                     <td>  {{$tienda->nit}}</td>   
                     <td>  {{$tienda->encargado_id}}</td>
                     <td>  {{$tienda->ubicacion}}</td>
@@ -41,7 +43,7 @@
             </table>
                             <div class="links">
                     
-                    <a href="{{ '/tienda/' }}"> Regresar</a>
+                    <a href="{{ '/admin/' }}"> Regresar</a>
                     
 
                 </div>

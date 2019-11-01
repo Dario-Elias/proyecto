@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class EsAdmin
 {
@@ -15,6 +16,15 @@ class EsAdmin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+       $user=Auth::user();
+    if(!$user->esAdmin()){
+
+  
+        return redirect('/');
+
     }
+
+        return $next($request);
+   
+}
 }

@@ -25,9 +25,7 @@ class TiendaController extends Controller
 
     public function index()
     {
- 
-        $tienda=tienda::all();
-        return view ("tiendas.index",compact("tienda"));
+        return view ("tiendas.index");
     }
 
     /**
@@ -72,10 +70,11 @@ class TiendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $tienda=tienda::findOrFail($id);
-        return view("tiendas.show",compact("tienda"));
+         $tienda=tienda::all();
+        return view ("tiendas.show",compact("tienda"));
+
     }
 
     /**
@@ -101,7 +100,7 @@ class TiendaController extends Controller
     {
         $tienda=tienda::findOrFail($id);
         $tienda->update($request->all());
-        return redirect("/tiendas");
+        return redirect("/tiendas/show");
     }
 
     /**
