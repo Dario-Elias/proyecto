@@ -16,7 +16,7 @@
                 <div class="links">
                     
                     <a href="{{ '/tienda/new' }}"> Crear</a>
-                    <a href="{{ '/home' }}"> Regresar</a>
+                    
 
                 </div>
 

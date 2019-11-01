@@ -112,6 +112,9 @@ class TiendaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tienda=tienda::findOrFail($id);
+        $tienda->delete();
+        return redirect("/tiendas");
+
     }
 }

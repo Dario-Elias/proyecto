@@ -60,15 +60,23 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Guardar Cambios
+                        <i class="fa fa-plus"></i> Actualizar Registro
                     </button>
                 </div>
             </div>
 
-                <div class="links">
-                    <a href="{{ '/tienda' }}"> Regresar</a>
-                </div>
+
         </form>
+        <form  action="/tienda/remove/{{$tienda->id}}" method="POST" >
+            {{ csrf_field() }}
+
+             <input type="hidden" name="_method" value="delete">
+
+             <input type="submit" value="Eliminar Registro">
+
+        </form>
+                 <a href="{{ '/tienda' }}"> Regresar</a>
+
     
     </div>
 </div>
