@@ -14,7 +14,6 @@
     <div class="panel-body">
       
 
-
     
 
      <!-- New Task Form -->

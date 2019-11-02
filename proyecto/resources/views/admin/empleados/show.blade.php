@@ -34,7 +34,7 @@
                     @foreach($empleados as $empleados)
                  <tr>
  
-                    <td>  {{$empleados->id}}</td>  
+                    <td> <a href="{{route('admin_Empleado.edit',$empleados->id)}}">  {{$empleados->id}}</a></td>   
                     <td>  {{$empleados->cui}}></td>                    
                     <td>  {{$empleados->nombre}}</td>   
                     <td>  {{$empleados->apellido}}</td>

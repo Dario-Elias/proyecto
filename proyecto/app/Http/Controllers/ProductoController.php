@@ -18,7 +18,7 @@ class ProductoController extends Controller
 
      public function __construct()
     {
-        $this->middleware('EsAdmin');
+        $this->middleware('EsUser');
     }
     public function index()
     {

@@ -1,14 +1,31 @@
-<div>
-    <div>
-        <h2>Bienvenidos a la Administración de Productos</h2>
-    </div>
-    <div>
-        <p> Ésta es mi primer pantalla</p>
-    </div>
+@extends('layouts.app')
+@section('content')
+<div class="col-sm-offset-3 col-sm-6">
+<div class="col-sm-offset-3 col-sm-6">
+    <div class="panel-title">
+        <h2>Administracion de Productos</h2>
 
-    <div>
-        <button><a href="{{ '/producto/new' }}"> Crear</a></button>
-        <button><a href="{{ '/producto/edit' }}"> Editar</a></button>
-        <button><a href="{{ '/home' }}"> Regresar</a></button>
+  
+     </div>
+ </div>
+    <!-- Bootstrap Boilerplate... -->
+
+    <div class="panel-body">
+        <!-- Display Validation Errors -->
+
+            <div class="col-sm-offset-3 col-sm-6">
+                <div class="links">
+                    
+                    <a href="{{ '/admin_Producto/create' }}"> Crear</a>
+                    <br>
+                    <a href="{{ '/admin_Producto/show' }}"> Ver Listado de Productos</a>
+                    
+
+                </div>
+            </div>
     </div>
 </div>
+
+
+
+@endsection

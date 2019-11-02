@@ -16,7 +16,7 @@
             <div class="col-sm-offset-3 col-sm-6">
                 <div class="links">
                     
-                    <a href="{{ '/admin_Empleado/new' }}"> Crear</a>
+                    <a href="{{ '/admin_Empleado/create' }}"> Crear</a>
                     <br>
                     <a href="{{ '/admin_Empleado/show' }}"> Ver Listado de Empleados</a>
                     

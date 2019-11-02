@@ -47,6 +47,21 @@ class User extends Authenticatable
         if($this->role->nombre_rol=='administrador'){
             return true;
         }
+         if($this->role->nombre_rol=='bodega'){
+            return true;
+        }
+
+        return false;
+    }
+
+        public function esUser(){
+
+        if($this->role->nombre_rol=='administrador'){
+            return true;
+        }
+         if($this->role->nombre_rol=='ventas'){
+            return true;
+        }
 
         return false;
     }

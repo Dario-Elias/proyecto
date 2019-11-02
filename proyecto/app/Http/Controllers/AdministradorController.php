@@ -14,7 +14,7 @@ use App\admin\tiendas;
 class AdministradorController extends Controller
 {
     public function __construct(){
-    	$this->middleware('EsAdmin');
+    	$this->middleware('EsUser');
 
     }
 

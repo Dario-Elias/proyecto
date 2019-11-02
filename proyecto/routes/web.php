@@ -26,6 +26,9 @@ Route::get('/', function () {
 Route::resource('/tiendas','TiendaController');
 Route::resource('/admin','AdministradorController');
 Route::resource('/admin_Producto','ProductoController');
+Route::resource('/admin_Empleado','EmpleadoController');
+Route::resource('/venta','VentaController');
+
 
 Auth::routes();
 
@@ -39,6 +42,7 @@ Route::get( '/serie' , 'SerieController@index');
 Route::get('/admin','AdministradorController@index');
 Route::get('/admin_Producto','ProductoController@index');
 Route::get('/admin_Empleado','EmpleadoController@index');
+Route::get('/ventas','VentaController@index');
 
 
 
@@ -53,6 +57,7 @@ Route::get('/admin_Empleado/new','EmpleadoController@create');
 Route::get( '/tienda/show/' , 'TiendaController@show');
 Route::get( '/admin/show/' , 'AdministradorController@show');
 Route::get( '/admin_Empleado/show/' , 'EmpleadoController@show');
+
 
 Route::post( '/tienda/save' , 'TiendaController@store');
 Route::post( '/empleado/save' , 'EmpleadoController@store');
@@ -88,6 +93,6 @@ Route::delete( '/producto/remove/{producto}' , 'ProductoController@destroy');
 Route::delete( '/serie/remove/{serie}' , 'SerieController@destroy');
 Route::delete( '/admin/remove/{tienda}' , 'AdministradorController@destroy');
 Route::delete( '/admin_Producto/remove/{admin_Producto}' , 'ProductoController@destroy');
-Route::delete( '/admin_Empleado/remove/{admin_Empleado}' , 'Empleadoontroller@destroy');
+Route::delete( '/admin_Empleado/remove/{admin_Empleado}' , 'EmpleadoController@destroy');
 
 

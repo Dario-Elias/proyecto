@@ -81,9 +81,10 @@ class EmpleadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-         return view ("empleados.edit");
+        $empleados=empleado::findOrFail($id);
+        return view ("admin.empleados.edit",compact("empleados"));
     }
 
     /**
@@ -95,7 +96,9 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $empleados=empleado::findOrFail($id);
+        $empleados->update($request->all());
+        return redirect("/admin_Empleado/show");
     }
 
     /**
@@ -106,6 +109,9 @@ class EmpleadoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $empleados=empleado::findOrFail($id);
+        $empleados->delete();
+        return redirect("/admin_Empleado/show");
     }
 }
