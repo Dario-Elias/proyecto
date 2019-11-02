@@ -42,7 +42,7 @@ Route::get( '/serie' , 'SerieController@index');
 Route::get('/admin','AdministradorController@index');
 Route::get('/admin_Producto','ProductoController@index');
 Route::get('/admin_Empleado','EmpleadoController@index');
-Route::get('/ventas','VentaController@index');
+Route::get('/venta','VentaController@index');
 
 
 
@@ -53,10 +53,12 @@ Route::get( '/producto/new' , 'ProductoController@create');
 Route::get( '/serie/new' , 'SerieController@create');
 Route::get('/admin/new','AdministradorController@create');
 Route::get('/admin_Empleado/new','EmpleadoController@create');
+Route::get('/venta/new','VentaController@create');
 
 Route::get( '/tienda/show/' , 'TiendaController@show');
 Route::get( '/admin/show/' , 'AdministradorController@show');
 Route::get( '/admin_Empleado/show/' , 'EmpleadoController@show');
+Route::get( '/venta/show/' , 'VentaController@show');
 
 
 Route::post( '/tienda/save' , 'TiendaController@store');
@@ -67,6 +69,7 @@ Route::post( '/serie/save' , 'SerieController@store');
 Route::post( '/admin/save' , 'AdministradorController@store');
 Route::post( '/admin_Producto/save' , 'ProductoController@store');
 Route::post( '/admin_Empleado/save' , 'EmpleadoController@store');
+Route::post( '/venta/save' , 'VentaController@store');
 
 Route::get( '/tienda/edit' , 'TiendaController@edit');
 Route::get( '/empleado/edit' , 'EmpleadoController@edit');
@@ -76,6 +79,7 @@ Route::get( '/serie/edit' , 'SerieController@edit');
 Route::get('/admin/edit','AdministradorController@edit');
 Route::get('/admin_Producto/edit','ProductoController@edit');
 Route::get('/admin_Empleado/edit','EmpleadoController@edit');
+Route::get('/venta/edit','VentaController@edit');
 
 Route::patch( '/tienda/{tienda}/update' , 'TiendaController@update');
 Route::patch( '/empleado/{empleado}/update' , 'EmpleadoController@update');
@@ -85,6 +89,8 @@ Route::patch( '/serie/{serie}/update' , 'SerieController@update');
 Route::patch( '/admin/{tienda}/update' , 'AdministradorController@update');
 Route::patch( '/admin_Producto/{admin_Producto}/update' , 'ProductoController@update');
 Route::patch( '/admin_Empleado/{admin_Empleado}/update' , 'EmpleadoController@update');
+Route::patch( '/venta/{venta}/update' , 'VentaController@update');
+
 
 Route::delete( '/tienda/remove/{tienda}' , 'TiendaController@destroy');
 Route::delete( '/empleado/remove/{empleado}' , 'EmpleadoController@destroy');
@@ -94,5 +100,6 @@ Route::delete( '/serie/remove/{serie}' , 'SerieController@destroy');
 Route::delete( '/admin/remove/{tienda}' , 'AdministradorController@destroy');
 Route::delete( '/admin_Producto/remove/{admin_Producto}' , 'ProductoController@destroy');
 Route::delete( '/admin_Empleado/remove/{admin_Empleado}' , 'EmpleadoController@destroy');
+Route::delete( '/venta/remove/{venta}' , 'VentaController@destroy');
 
 
