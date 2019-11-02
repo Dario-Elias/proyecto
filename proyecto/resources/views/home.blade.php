@@ -93,7 +93,7 @@
                     <a href="{{ '/tienda' }}"> Tiendas</a>
                     <a href="{{ '/empleado' }}"> Empleados</a>
                     <a href="{{ '/proveedor' }}"> Proveedores</a>
-                    <a href="{{ '/producto' }}"> Productos</a>
+                    <a href="{{ '/admin_Producto' }}"> Productos</a>
                 </div>
             </div>
         </div>

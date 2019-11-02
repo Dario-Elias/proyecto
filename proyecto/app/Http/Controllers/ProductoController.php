@@ -18,11 +18,11 @@ class ProductoController extends Controller
 
      public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('EsAdmin');
     }
     public function index()
     {
-        return view ("productos.index");
+        return view ("admin.productos.index");
     }
 
     /**
@@ -32,7 +32,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view ("productos.create");
+        return view ("admin.productos.create");
     }
 
     /**
@@ -43,7 +43,17 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productos= new producto;
+        $productos->codigo=$request->codigo;
+        $productos->nombre=$request->nombre;
+        $productos->proveedor=$request->proveedor;
+        $productos->ubicacion=$request->ubicacion;
+        $productos->costo=$request->costo;
+        $productos->precio_venta=$request->precio_venta;
+        $productos->save();
+
+        return view("admin.productos.index");
+
     }
 
     /**
@@ -52,9 +62,10 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+         $productos=producto::all();
+        return view ("admin.productos.show",compact("productos"));
     }
 
     /**
@@ -63,9 +74,12 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
+
     {
-        return view ("productos.edit");
+        $productos=producto::findOrFail($id);
+        return view ("admin.productos.edit",compact("productos"));
+    
     }
 
     /**
@@ -77,7 +91,9 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productos=producto::findOrFail($id);
+        $productos->update($request->all());
+        return redirect("/admin_Producto/show");
     }
 
     /**
@@ -88,6 +104,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productos=producto::findOrFail($id);
+        $productos->delete();
+        return redirect("/admin_Producto/show");
     }
 }

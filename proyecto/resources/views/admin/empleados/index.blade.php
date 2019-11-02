@@ -3,7 +3,7 @@
 <div class="col-sm-offset-3 col-sm-6">
 <div class="col-sm-offset-3 col-sm-6">
     <div class="panel-title">
-        <h2>ADMINISTRACION DE TIENDAS</h2>
+        <h2>Administracion de Empleados</h2>
 
   
      </div>
@@ -16,22 +16,13 @@
             <div class="col-sm-offset-3 col-sm-6">
                 <div class="links">
                     
-                    <a href="{{ '/admin/create' }}"> Crear</a>
+                    <a href="{{ '/admin_Empleado/new' }}"> Crear</a>
                     <br>
-                    <a href="{{ '/admin/show' }}"> Ver Listado de Tiendas</a>
+                    <a href="{{ '/admin_Empleado/show' }}"> Ver Listado de Empleados</a>
                     
 
                 </div>
             </div>
-
-
-
-
-
-
-     
-
-    
     </div>
 </div>
 

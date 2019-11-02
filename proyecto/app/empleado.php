@@ -9,6 +9,7 @@ class empleado extends Model
     protected $stable='empleado';
 
     protected $fillable=[
+        'id',
     	'cui',
     	'nombre',
     	'apellido',

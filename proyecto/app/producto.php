@@ -8,6 +8,7 @@ class producto extends Model
 {
         protected $stable='proveedor';
         protected $fillable=[
+        'id',
     	'codigo',
     	'nombre',
     	'proveedor',

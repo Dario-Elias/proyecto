@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
 use App\empleado;
+use App\admin;
+use App\tienda;
+use App\admin\tiendas;
 
 class EmpleadoController extends Controller
 {
@@ -15,15 +18,17 @@ class EmpleadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+       $this->middleware('EsAdmin');
 
-        public function __construct()
-    {
-        $this->middleware('auth');
     }
+
+
 
     public function index()
     {
-        return view ("empleados.index");
+        return view ("admin.empleados.index");
+        
     }
 
     /**
@@ -33,7 +38,8 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-         return view ("empleados.create");
+         return view ("admin.empleados.create");
+        
     }
 
     /**
@@ -44,7 +50,17 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $empleados= new empleado;
+        $empleados->cui=$request->cui;
+        $empleados->nombre=$request->nombre;
+        $empleados->apellido=$request->apellido;
+        $empleados->email=$request->email;
+        $empleados->direccion=$request->direccion;
+        $empleados->telefono_casa=$request->telefono_casa;
+        $empleados->telefono_movil=$request->telefono_movil;
+        $empleados->save();
+
+        return view("admin.empleados.index");
     }
 
     /**
@@ -53,9 +69,10 @@ class EmpleadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $empleados=empleado::all();
+        return view ("admin.empleados.show",compact("empleados"));
     }
 
     /**
